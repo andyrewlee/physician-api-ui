@@ -16,6 +16,12 @@ export default class ApiStore {
     const res = await fetch('http://localhost:4567/physicians');
     const physicians = await res.json();
     this.physicians = physicians.physicians;
+    const firstPhysician = this.physicians[0]
+    this.loadAppointments(
+      firstPhysician.id,
+      firstPhysician.email,
+      `${firstPhysician.first_name} ${firstPhysician.last_name}`
+    )
   }
 
   @action async loadAppointments(physicianId, email, name) {

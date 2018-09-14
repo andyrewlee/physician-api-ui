@@ -1,4 +1,20 @@
+.Sidebar {
+    background-color: #eee;
+    width: 200px;
+}
+
 .Sidebar .active {
-    background-color: blue;
+    background-color: #337fdd;
     color: white;
+    flex: 1;
+}
+
+.Sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Sidebar li {
+    padding: 15px;
 }

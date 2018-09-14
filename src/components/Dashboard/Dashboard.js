@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
+import './Dashboard.css';
+
 @inject('apiStore')
 @observer
 export default class Dashboard extends Component {
@@ -17,7 +19,7 @@ export default class Dashboard extends Component {
     });
 
     return (
-      <div>
+      <div className="Dashboard">
         <h1>{this.props.apiStore.physicianName}</h1>
         <p>{this.props.apiStore.physicianEmail}</p>
 

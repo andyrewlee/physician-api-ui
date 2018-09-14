@@ -14,15 +14,17 @@ export default class Sidebar extends Component {
           className={className}
           key={i}
           onClick={() => {
-            this.props.apiStore.loadAppointments(item.id, item.email, item.first_name);
+            this.props.apiStore.loadAppointments(
+              item.id,
+              item.email,
+              `${item.first_name} ${item.last_name}`
+            );
           }}
         >
-          {item.first_name}
+          {item.last_name}, {item.first_name}
         </li>
       )
     });
-
-    console.log('physicians', physicians);
 
     return (
       <div className="Sidebar">
